@@ -3,7 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import axios from 'axios'
+import axios from './axios配置'
+//引入组件
+import Vant from 'vant'
+//引入样式
+import 'vant/lib/index.css'
+//作为中间件使用
+Vue.use(Vant)
 
 Vue.config.productionTip = false
 
