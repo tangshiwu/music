@@ -73,7 +73,6 @@
       getSongList() {
         this.$http('/personalized?limit=6')
           .then(res => {
-            console.log(res);
             this.songList = res.data.result
           })
           .catch(err => {

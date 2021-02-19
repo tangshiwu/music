@@ -7,7 +7,7 @@
       </div>
       <p class="date">更新日期: {{updateMonth>9?updateMonth:"0"+ updateMonth}}月{{updateDate1}}日</p>
     </div>
-    <div v-for="(item,index) in hotSongs" :key="index" class="hot_song">
+    <div v-for="(item,index) in hotSongs" :key="index" class="hot_song" @click="goPlay(item.id)">
       <div class="picU">
         <img :src="item['al']['picUrl']" width="80px" height="80px" alt="">
       </div>
@@ -15,7 +15,6 @@
         <p>{{item['al']['name']}}</p>
         <p class="singer_name">{{item['ar']['0']['name']}}</p>
       </div>
-
     </div>
   </div>
 </template>
@@ -44,13 +43,16 @@
             this.updateMonth = updateDate.getMonth() + 1
             this.updateDate1 = updateDate.getDate()
             this.hotSongs = res.data.playlist.tracks
-            console.log(res.data.playlist.tracks);
           })
           .catch(err => {
             console.log(err);
           })
+      },
+      goPlay(id){
+        this.$router.push('/play/'+id)
       }
     },
+
   }
 </script>
 
