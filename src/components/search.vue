@@ -2,7 +2,17 @@
 <div class="search">
   <div class="input-content">
     <i class="find"></i>
-    <van-search v-model="keyword" placeholder="请输入搜索关键词" shape="round" />
+    <van-search
+      v-model="keyword"
+      show-action
+      placeholder="请输入搜索关键词"
+      shape="round"
+      @search="goSearch(keyword)"
+    >
+      <template #action>
+        <div @click="onCancel">取消</div>
+      </template>
+    </van-search>
 <!--    <label>-->
 <!--      <input-->
 <!--        type="text"-->
@@ -86,6 +96,10 @@
           .catch(err=>{
             console.log(err);
           })
+        },
+        onCancel(){
+          this.keyword = ''
+          this.isShow = true
         }
       }
     }
@@ -123,13 +137,14 @@
     margin: 0 10px;
   }
   .hotword{
-    display: inline-block;
     padding: 8px;
     border: 1px solid #888;
     border-radius: 20px;
     margin: 8px;
-    position: relative;
-    float: left;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
   }
   .search-result{
     width: 100vw;

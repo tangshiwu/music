@@ -1,8 +1,7 @@
 <template>
   <div>
     <div class="top">
-      <span class="you-music">优音乐</span>
-      <span class="download">下载APP</span>
+      <span class="you-music">网易云音乐</span>
     </div>
     <div class="nav">
       <router-link class="link" to="/reCom">推荐</router-link>
@@ -39,16 +38,6 @@
     position: relative;
     float: left;
     padding: 25px 10px;
-  }
-  .download{
-    font-size: 18px;
-    position: relative;
-    float: right;
-    width: 90px;
-    margin: 25px 10px;
-    background-color: white;
-    border-radius: 20px;
-    color: red;
   }
   .nav{
     width: 100%;
