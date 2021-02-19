@@ -1,3 +1,5 @@
+## 简介
+主要功能有排行榜，搜索，歌词展示，歌曲播放等。
 ## 运行效果图
 <div>
 <img src="https://github.com/tangshiwu/music/blob/master/pic/%E9%A6%96%E9%A1%B5.png?raw=true" alt="首页" style="display:inline" width="300" height="537" />
