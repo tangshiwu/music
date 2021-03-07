@@ -1,5 +1,11 @@
 <template>
   <div class="play">
+    <div class="back" @click="goBack">
+      <img src="../../static/img/back.png" alt="" style="vertical-align: bottom;width:25px; height:25px" >
+      <span >返回</span>
+
+    </div>
+
     <audio
       :src="
         'https://music.163.com/song/media/outer/url?id=' +
@@ -55,6 +61,9 @@
       this.getDetail(this.$route.params.id);
     },
     methods: {
+      goBack(){
+        window.history.go(-1)
+      },
       // 获取歌词
       getLyric(id) {
         this.$http("lyric", { params: { id } })
@@ -124,6 +133,15 @@
   .play {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
+  }
+  .back{
+    width: 65px;
+    height: 25px;
+    background-size: cover;
+    position: absolute;
+    margin: 10px;
+    font-size: 17px;
+    color: floralwhite;
   }
   .lrc-div {
     width: 85%;
